@@ -1,0 +1,10 @@
+[Unit]
+Description=Mailgraph Daemon
+
+[Service]
+Type=forking
+#ExecStart=/usr/bin/mailgraph.pl -d -l /var/log/syslog --daemon-rrd /var/lib/mailgraph
+ExecStart=/opt/mailgraph-imap/mailgraph.pl -d -l /var/log/dovecot.log --daemon-rrd /opt/mailgraph-imap/rrd
+
+[Install]
+WantedBy=multi-user.target
